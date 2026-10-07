@@ -1,0 +1,63 @@
+\documentclass[a4paper,11pt,leqno]{article}
+\usepackage{paper}
+\bibliographystyle{paper}
+
+% Enter paper title to populate PDF metadata:
+\hypersetup{pdftitle={Place Holder}}
+
+% Enter path to BibTeX file with references:
+\newcommand{\bib}{literature.bib}
+
+% Enter path to PDF file with figures:
+\newcommand{\pdf}{figures.pdf}
+
+\begin{document}
+
+% Enter title:
+\title{Ring Attractors for Bat Navigation}
+
+% Enter authors:
+\author{Siemen Aulich, Andrej Bicanski
+\thanks{Max-Planck Institute for Human Cognitive and Brain Science}}
+
+% Enter date:
+\date{October 2026}   
+
+% Enter paper URL (can be commented out):
+\paperurl{https://github.com/siaulich/grid-cells}
+
+\begin{titlepage}
+\maketitle
+\end{titlepage}
+
+% Enter main text:
+\section{Introduction}\label{s:introduction}
+
+\paragraph{Head Direction Cells in Mammals}
+Orientation and localization are essential skills for many animals' survival. To plan and carry out movement manoeuvres, an animal requires an encoding of the position and orientation of within the brain. This can be broken down into two components: a self-location of the position in space and a sense of orientation.
+Neural recordings of different mammals have revealed the existence of \textit{head-direction (HD) cells}. The defining quality of these cells is the tuning of their firing rate to the orientation of the animal's head. This tuning, notably, remains consistent in the absence of visual cues. HD cells have been observed in various mammals, such as rats, monkeys, and bats.  % add citations
+These cells' properties are remarkably well modelled by a continuous attractor network (CAN)~\cite{Zhang1996}. Therefore, HD cells have become a hallmark example for the existence of CANs in biological neural systems. Generally, they serve as an integrator of the angular velocity signals from the vestibular system. This process allows to maintain a sense of orientation without visual cues. 
+Another important aspect of HD cells is their interaction with the visual cortex. The integration of the turning velocity accumulates error which leads to a drift of the encoded representation with respect to the physical orientation. Realigning the representation can be performed using visual information.
+
+\paragraph{Models of HD Cells} In the many years since their discovery in rats, many computational models have been developed to describe the functionality and properties of HD cells. Most of these models focus on the tuning to the orientation in a rats plane of movement. Since rats primarily navigate two-dimensional environment, this provides a reasonable description of the most important parts of their orientation system.
+Bats, in contrast, navigate and seamlessly perform complex flight pattern in three-dimension. Recordings of freely flying bats have shown a diverse population of HD cells~\cite{Finkelstein2015}. To date, however, no computational model to describe the different types of cells has been published. Attempting to fill this gap, this work presents a minimal model providing a possible description of the computational origins for the observed cell types. The proposed model is able to describe the majority of observed tuning behaviours described in Ref. \cite{Finkelstein2015}. Notably, the model only makes use of attractor network components that have been conclusively established in rodents, and thus provides a description of the bats head direction system with minimal assumptions.
+
+
+\section{Computational Model}\label{s:section}
+
+
+
+
+\section{Conclusion}\label{s:ccl}
+
+
+\bibliography{\bib}
+\appendix
+
+% Enter appendix text:
+\section{Generic appendix}\label{a:appendix1}
+
+
+
+
+\end{document}

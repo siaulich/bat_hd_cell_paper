@@ -1,0 +1,76 @@
+\usepackage{geometry}
+\geometry{a4paper, margin=0.50in} % Marign must be at least 0.5
+
+
+\usepackage[T1]{fontenc}
+\renewcommand*\familydefault{\sfdefault}
+\usepackage{csquotes}
+\usepackage[numbers,sort&compress]{natbib}
+% Compact bibliography
+\usepackage{etoolbox}
+
+\AtBeginEnvironment{thebibliography}{%
+  \fontsize{10pt}{10.5pt}\selectfont
+}
+\makeatletter
+\renewcommand{\bibsection}{%
+  \vspace{-0.5em}
+  \section*{\fontsize{10pt}{10.5pt}\selectfont References:}%
+  \vspace{-0.8em}
+}
+\makeatother
+
+\AtBeginEnvironment{thebibliography}{%
+  \fontsize{10pt}{10.5pt}\selectfont
+}
+
+\setlength{\bibsep}{0pt}
+
+
+\usepackage{titlesec}
+
+\titleformat{\section}
+  {\normalfont\bfseries\fontsize{12pt}{12pt}\selectfont}
+  {\thesection}{1em}{}
+
+\titlespacing*{\section}{0pt}{*}{*}
+
+\usepackage{wrapfig}
+\usepackage{booktabs,tabularx}            % professional-quality tables
+\usepackage{amsfonts,nicefrac,amsmath}    % blackboard math symbols
+\usepackage{microtype}
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage[acronym]{glossaries}
+\usepackage{graphicx}
+\usepackage{soul}
+\usepackage{xspace}
+\usepackage{caption}
+\usepackage{siunitx}
+\usepackage[bookmarks=true]{hyperref}
+\usepackage{cleveref}
+
+\Crefname{figure}{Fig.}{Figs.}
+
+
+% Paragraph spacing
+\setlength{\parindent}{0pt}
+%\setlength{\parskip}{0.45em}
+
+% Line spacing
+\renewcommand{\baselinestretch}{0.95}
+
+% Set figure caption font to 10pt
+\captionsetup{font=footnotesize}
+
+\graphicspath{{../}}
+\definecolor{custom_blue}{HTML}{1565c0}
+\definecolor{custom_red} {HTML}{800000}
+\colorlet{custom}{custom_blue}
+
+\hypersetup{
+    colorlinks,
+    citecolor=custom_blue,
+    linkcolor=custom,
+    urlcolor=custom,
+}

@@ -1,0 +1,45 @@
+% Font must be at least 12pt, 10pt for figures
+\documentclass[12pt, letterpaper]{article}
+
+
+\usepackage{cosyne_abstract}
+
+\usepackage{etoolbox}
+\bibliographystyle{cosyne_abstract}
+\pagenumbering{gobble}
+
+
+
+
+\date{}
+\author{}
+% Enter paper title to populate PDF metadata:
+\hypersetup{pdftitle={Place Holder}}
+\makeatletter
+
+% Enter path to PDF file with figures:
+
+% Enter title:
+\title{\color{custom}\large{\vspace{-1.5cm}%
+Ring attractors for two-dimensional navigation in bats}}
+
+
+\begin{document}
+
+\maketitle
+\vspace*{-2cm}
+
+\textbf{Summary:} Head direction (HD) cells~\cite{Taube1990} in rats are well described by a one-dimensional continuous attractor network~\cite{Zhang1996}. These models encode the heading as a stabilized activity bump in a ring of neurons. For animals freely roaming in three dimensions, such as bats, these models are insufficient to describe the more complex encoding of the head direction. Despite many similarities to rodents, recorded HD cells in bats have shown some unique features that are not explained by models used for rodents. Neural recordings in~\cite{Finkelstein2015} showed that HD cells in bats encode the heading in toroidal coordinates. Further, an ensemble of cells tuned to either one or a conjunction of principal angles.
+To date, however, no comprehensive model of the HD system in bats has been published. Our research attempts to address this gap by exploring different minimal models of HD cells in bats. Our work employs a combination of two attractor rings for different vestibular stimuli that can reproduce the firing patterns and different types of cell tuning that were experimentally observed. The models provide functional meaning to conjunctive HD cells, as they provide a bridge between the one-dimensional representation of the two heading and the two-dimensional representation of the visual field. This connection helps to realign the activity bumps of the ring attractor, which are subject to drift from intrinsic noise.
+Different circuits design for the interaction with the visual cortex are proposed, investigated, and their different properties discussed. The connection of the visual cortex with the HD system is shown to develop dynamically via neural plasticity based on Hebbian learning.
+Lastly, a possible experimental discrimination of the circuit designs is proposed. Additional questions that might be addressed by experiments to guide the further model development for HD circuits in bats are presented.
+
+
+\vspace*{-0.2cm}
+\hrulefill
+
+\textbf{Additional Details:}
+
+
+\bibliography{literature.bib}
+\end{document}
