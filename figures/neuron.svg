@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 1000 600"
+   version="1.1"
+   id="svg34"
+   sodipodi:docname="neuron.svg"
+   inkscape:version="1.4.2 (ebf0e940, 2025-05-08)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview34"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.87809283"
+     inkscape:cx="328.55296"
+     inkscape:cy="151.46462"
+     inkscape:window-width="1440"
+     inkscape:window-height="1121"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg34" />
+  <defs
+     id="defs1">
+    <style
+       id="style1">
+      .outline {
+        fill: none;
+        stroke: #222;
+        stroke-width: 5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .fine {
+        fill: none;
+        stroke: #444;
+        stroke-width: 2.5;
+        stroke-linecap: round;
+      }
+    </style>
+  </defs>
+  <!-- DENDRITES -->
+  <path
+     d="M 340,285 C 270,250 225,205 150,125"
+     id="path1"
+     style="fill:none;stroke:#222222;stroke-width:5;stroke-linecap:round;stroke-linejoin:round" />
+  <path
+     d="M 330,265 C 260,230 205,225 115,210"
+     id="path2"
+     style="fill:none;stroke:#222222;stroke-width:5;stroke-linecap:round;stroke-linejoin:round" />
+  <path
+     d="M 335,315 C 265,345 220,395 135,455"
+     id="path3"
+     style="fill:none;stroke:#222222;stroke-width:5;stroke-linecap:round;stroke-linejoin:round" />
+  <path
+     d="M 350,330 C 300,390 275,445 210,500"
+     id="path4"
+     style="fill:none;stroke:#222222;stroke-width:5;stroke-linecap:round;stroke-linejoin:round" />
+  <path
+     d="M 350,240 C 300,175 275,125 230,70"
+     id="path5"
+     style="fill:none;stroke:#222222;stroke-width:5;stroke-linecap:round;stroke-linejoin:round" />
+  <path
+     d="M 196.49532,171.60957 C 169.75587,138.67021 152.44622,111.73741 146.11636,75.891451"
+     id="path6"
+     style="fill:none;stroke:#222222;stroke-width:5;stroke-linecap:round;stroke-linejoin:round" />
+  <path
+     d="M 180,160 C 145,155 115,135 90,110"
+     id="path7"
+     style="fill:none;stroke:#222222;stroke-width:5;stroke-linecap:round;stroke-linejoin:round" />
+  <path
+     d="m 195.70621,225.06567 c -39.42814,-8.39181 -74.28843,-2.49605 -110.866019,14.44738"
+     id="path8"
+     style="fill:none;stroke:#222222;stroke-width:5;stroke-linecap:round;stroke-linejoin:round" />
+  <path
+     d="m 218.61169,389.85911 c -35,0 -75,15 -110,40"
+     id="path9"
+     style="fill:none;stroke:#222222;stroke-width:5;stroke-linecap:round;stroke-linejoin:round" />
+  <path
+     d="m 210.24949,398.4165 c -35,25 -55,50 -75,80"
+     id="path10"
+     style="fill:none;stroke:#222222;stroke-width:5;stroke-linecap:round;stroke-linejoin:round" />
+  <path
+     d="m 277.27766,139.30584 c -25,-25 -45,-39.999995 -75,-44.999999"
+     id="path11"
+     style="fill:none;stroke:#222222;stroke-width:5;stroke-linecap:round;stroke-linejoin:round" />
+  <!-- CELL BODY / SOMA -->
+  <path
+     d="M330 205        C365 190 410 210 425 245        C445 285 420 330 385 350        C345 370 295 350 275 315        C255 280 275 230 330 205 Z"
+     fill="#f5f5f5"
+     stroke="#222"
+     stroke-width="6"
+     id="path12" />
+  <!-- Nucleus -->
+  <circle
+     cx="350"
+     cy="275"
+     r="38"
+     fill="white"
+     stroke="#222"
+     stroke-width="5"
+     id="circle12" />
+  <circle
+     cx="360"
+     cy="265"
+     r="10"
+     fill="#222"
+     id="circle13" />
+  <!-- Small organelles -->
+  <g
+     fill="none"
+     stroke="#555"
+     stroke-width="3"
+     id="g15">
+    <ellipse
+       cx="310"
+       cy="250"
+       rx="12"
+       ry="7"
+       id="ellipse13" />
+    <ellipse
+       cx="390"
+       cy="285"
+       rx="13"
+       ry="7"
+       id="ellipse14" />
+    <ellipse
+       cx="330"
+       cy="325"
+       rx="11"
+       ry="6"
+       id="ellipse15" />
+  </g>
+  <!-- AXON -->
+  <path
+     class="outline"
+     d="M415 275 C490 275 550 275 625 275"
+     id="path15" />
+  <!-- MYELIN SHEATH -->
+  <g
+     fill="#e8e8e8"
+     stroke="#222"
+     stroke-width="4"
+     id="g17">
+    <rect
+       x="455"
+       y="250"
+       width="70"
+       height="50"
+       rx="25"
+       id="rect15" />
+    <rect
+       x="545"
+       y="250"
+       width="70"
+       height="50"
+       rx="25"
+       id="rect16" />
+    <rect
+       x="635"
+       y="250"
+       width="70"
+       height="50"
+       rx="25"
+       id="rect17" />
+  </g>
+  <!-- Myelin detail lines -->
+  <g
+     class="fine"
+     id="g22">
+    <path
+       d="M470 258 C485 270 485 280 470 292"
+       id="path17" />
+    <path
+       d="M485 255 C500 270 500 280 485 295"
+       id="path18" />
+    <path
+       d="M560 258 C575 270 575 280 560 292"
+       id="path19" />
+    <path
+       d="M575 255 C590 270 590 280 575 295"
+       id="path20" />
+    <path
+       d="M650 258 C665 270 665 280 650 292"
+       id="path21" />
+    <path
+       d="M665 255 C680 270 680 280 665 295"
+       id="path22" />
+  </g>
+  <!-- NODES OF RANVIER -->
+  <g
+     fill="white"
+     stroke="#222"
+     stroke-width="4"
+     id="g23">
+    <rect
+       x="525"
+       y="263"
+       width="20"
+       height="24"
+       rx="8"
+       id="rect22" />
+    <rect
+       x="615"
+       y="263"
+       width="20"
+       height="24"
+       rx="8"
+       id="rect23" />
+  </g>
+  <!-- AXON TERMINAL BRANCHING -->
+  <g
+     class="outline"
+     id="g30">
+    <path
+       d="M705 275 C760 275 790 250 825 215"
+       id="path23" />
+    <path
+       d="M705 275 C770 275 805 285 850 305"
+       id="path24" />
+    <path
+       d="M705 275 C760 290 785 325 815 365"
+       id="path25" />
+    <!-- Terminal branches -->
+    <path
+       d="M825 215 C845 195 865 185 885 180"
+       id="path26" />
+    <path
+       d="M825 215 C845 220 860 230 875 240"
+       id="path27" />
+    <path
+       d="M850 305 C875 295 895 295 915 300"
+       id="path28" />
+    <path
+       d="M850 305 C875 320 890 335 905 350"
+       id="path29" />
+    <path
+       d="M815 365 C830 385 850 395 870 400"
+       id="path30" />
+  </g>
+  <!-- SYNAPTIC TERMINAL BUTTONS -->
+  <g
+     fill="white"
+     stroke="#222"
+     stroke-width="4"
+     id="g34">
+    <circle
+       cx="890"
+       cy="180"
+       r="9"
+       id="circle30" />
+    <circle
+       cx="875"
+       cy="240"
+       r="9"
+       id="circle31" />
+    <circle
+       cx="915"
+       cy="300"
+       r="9"
+       id="circle32" />
+    <circle
+       cx="905"
+       cy="350"
+       r="9"
+       id="circle33" />
+    <circle
+       cx="870"
+       cy="400"
+       r="9"
+       id="circle34" />
+  </g>
+</svg>

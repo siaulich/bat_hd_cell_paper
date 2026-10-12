@@ -3,25 +3,27 @@
 
 
 \usepackage{cosyne_abstract}
+\usepackage{siunitx}
 
 \usepackage{etoolbox}
 \bibliographystyle{cosyne_abstract}
 \pagenumbering{gobble}
 
+\newcommand{\subrefb}[1]{(\subref{#1})}
 
 
 
 \date{}
 \author{}
 % Enter paper title to populate PDF metadata:
-\hypersetup{pdftitle={Place Holder}}
+\hypersetup{pdftitle={Ring attractors for three-dimensional navigation in bats}}
 \makeatletter
 
 % Enter path to PDF file with figures:
 
 % Enter title:
 \title{\color{custom}\large{\vspace{-1.5cm}%
-Ring attractors for two-dimensional navigation in bats}}
+Ring attractors for three-dimensional navigation in bats}}
 
 
 \begin{document}
@@ -29,17 +31,74 @@ Ring attractors for two-dimensional navigation in bats}}
 \maketitle
 \vspace*{-2cm}
 
-\textbf{Summary:} Head direction (HD) cells~\cite{Taube1990} in rats are well described by a one-dimensional continuous attractor network~\cite{Zhang1996}. These models encode the heading as a stabilized activity bump in a ring of neurons. For animals freely roaming in three dimensions, such as bats, these models are insufficient to describe the more complex encoding of the head direction. Despite many similarities to rodents, recorded HD cells in bats have shown some unique features that are not explained by models used for rodents. Neural recordings in~\cite{Finkelstein2015} showed that HD cells in bats encode the heading in toroidal coordinates. Further, an ensemble of cells tuned to either one or a conjunction of principal angles.
-To date, however, no comprehensive model of the HD system in bats has been published. Our research attempts to address this gap by exploring different minimal models of HD cells in bats. Our work employs a combination of two attractor rings for different vestibular stimuli that can reproduce the firing patterns and different types of cell tuning that were experimentally observed. The models provide functional meaning to conjunctive HD cells, as they provide a bridge between the one-dimensional representation of the two heading and the two-dimensional representation of the visual field. This connection helps to realign the activity bumps of the ring attractor, which are subject to drift from intrinsic noise.
-Different circuits design for the interaction with the visual cortex are proposed, investigated, and their different properties discussed. The connection of the visual cortex with the HD system is shown to develop dynamically via neural plasticity based on Hebbian learning.
-Lastly, a possible experimental discrimination of the circuit designs is proposed. Additional questions that might be addressed by experiments to guide the further model development for HD circuits in bats are presented.
+\textbf{Summary:} Head direction (HD) cells in rats are well described by one-dimensional continuous attractor networks~\cite{Taube1990,Zhang1996}, in which a localized activity bump encodes the animal's heading. This framework is insufficient for animals that navigate freely in three dimensions, such as bats. HD cells recorded in bats are organized in toroidal coordinates~\cite{Finkelstein2015}: some are tuned to a single angle (yaw or pitch), others to conjunctions of angles. A unified computational account of these observations is still lacking.
 
+Here, we present minimal attractor-network models of the bat HD system that reproduce these firing patterns and cell types. The models combine two ring attractors, each integrating a different component of the vestibular input. Conjunctive HD cells functionally couple the resulting one-dimensional vestibular representations to a two-dimensional visual representation, which allows visual information to correct the noise-induced drift of the attractor state.
+
+We compare two circuit architectures for coupling the HD system to visual input and characterize their distinct dynamical properties. In both, the visual--HD connectivity is learned through Hebbian plasticity, providing a possible mechanism for associating visual features with head direction. Finally, we derive experimentally testable predictions that distinguish the two architectures.
+
+Our framework is a starting point for more extensive modelling of the bat HD system. Unlike in rodents, three-dimensional navigation introduces additional degrees of freedom and computational questions that cannot be addressed by simply extending existing one-dimensional models. By capturing key experimental features in a minimal model, our work highlights these differences and motivates further modelling and experiments on the mechanisms of three-dimensional head-direction coding and its interaction with the visual system.
 
 \vspace*{-0.2cm}
 \hrulefill
 
-\textbf{Additional Details:}
+\textbf{Additional Details:} Our model uses rate-based neurons, with recurrent connectivity within each ring attractor as described in~\cite{Zhang1996}. Vestibular angular-velocity signals about the yaw and pitch axes each modulate the gain of the corresponding ring, which thereby integrates head direction about that axis. Additive Gaussian noise, implemented as a Wiener process, emulates neural variability. We explore two configurations for the connectivity between the ring attractors, conjunctive cells, and landmark cells (\Cref{subfig:conj_feeback,subfig:direct_feedback}). Both employ dynamic weights based on normalized Hebbian learning~\cite{Miller1994} to learn the association between landmark cells and the HD system. Landmark cells have Gaussian tuning curves and become active when a landmark enters the bat's visual field. In both models, conjunctive cells sum feedforward input from both rings and are thresholded by a negative bias. The models differ in the role of the conjunctive population: in one it mediates between the HD rings and the visual system, whereas in the other the visual feedback projects directly onto the rings.
 
+Our models replicate the main HD cell types observed in flying bats~\cite{Finkelstein2015}; trial-averaged firing rates of one representative cell per type are shown in \Cref{subfig:cell_types}. We further quantify the effect of landmark anchoring: \Cref{subfig:drift_comparison} shows the average error over repeated trials for both mechanisms. While both provide stable anchoring, their firing rates differ markedly when visual feedback is absent. This is shown in \Cref{subfig:darkness_fire_rate} as the distribution of firing-rate differences of conjunctive cells between light and dark conditions.
+
+We tested the models by simulating bat flights in an enclosed environment. Speed was modelled as an Ornstein--Uhlenbeck process~\cite{Gillespie1996}, with an additional slowdown near the wall. Heading followed the same type of process, with an added turn away from the wall that scales linearly with wall proximity. A similar repulsion prevented unrealistic upward- or downward-facing flights. Roll was not simulated, as roll-sensitive cells are sparse~\cite{Finkelstein2015}.
+
+Finally, we tested a single toroidal attractor, as proposed in~\cite{McNaughton2006} and observed for grid cells in~\cite{Gardner2022}. This architecture performed worse: it requires far more neurons than two rings and nevertheless shows stronger drift (\Cref{subfig:torus_comparison}). It would also not predict the cells tuned exclusively to yaw or pitch reported in~\cite{Finkelstein2015}, which the two-ring architecture accounts for naturally.
+
+
+\begin{figure}
+    \centering
+    \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=1.0\textwidth]{figures/bat_hd_conj_feedback.pdf}
+        \caption{Conjunctive-cell feedback}
+        \label{subfig:conj_feeback}
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=1.0\textwidth]{figures/bat_hd_direct_feedback.pdf}
+        \caption{Direct feedback}
+        \label{subfig:direct_feedback}
+    \end{subfigure}\\
+    \vspace{0.5cm}
+    \begin{subfigure}{0.32\textwidth}
+        \includegraphics[width=1.0\textwidth]{figures/bat_trajectory.pdf}
+        \caption{}
+        \label{subfig:trajectory}
+    \end{subfigure}
+    \begin{subfigure}{0.32\textwidth}
+        \includegraphics[width=1.0\textwidth]{figures/compare_full_torus/angular_error_comparison.pdf}
+        \caption{}
+        \label{subfig:torus_comparison}
+    \end{subfigure}
+    \begin{subfigure}{0.32\textwidth}
+        \includegraphics[width=1.0\textwidth]{figures/hebb_alt/bat_flight_cell_types_anchor.pdf}
+        \caption{}
+        \label{subfig:cell_types}
+    \end{subfigure}\\
+    \vspace{0.5cm}
+    \begin{subfigure}{0.65\textwidth}
+        \includegraphics[width=1.0\textwidth]{figures/comparison/angular_error_comparison.pdf}
+        \caption{}
+        \label{subfig:drift_comparison}
+    \end{subfigure}
+    \begin{subfigure}{0.32\textwidth}
+        \includegraphics[width=1.0\textwidth]{figures/darkness/conj_cells_rate_difference_histogram.pdf}
+        \caption{}
+        \label{subfig:darkness_fire_rate}
+    \end{subfigure}
+    \caption{\subrefb{subfig:conj_feeback},~\subrefb{subfig:direct_feedback}~Schematics of the two circuit models. \subrefb{subfig:trajectory}~Example of a one-minute simulated bat flight. All simulated recordings below have a duration of $T=\SI{400}{\second}$. Both models use $N_{\text{yaw}}=256$ and $N_{\text{pitch}}=128$ neurons in the two rings, $N_{\text{landmark}}=40$ landmark cells, and a conjunctive population of $N_\text{conj}=20\times 10$ cells. \subrefb{subfig:torus_comparison}~Average drift over five trials without anchoring for the two-ring network and for a toroidal attractor of dimensions $N=256\times128$. \subrefb{subfig:cell_types}~Trial-averaged firing-rate maps of the different cell types as a function of yaw and pitch, obtained from the conjunctive-cell model with visual anchoring. \subrefb{subfig:drift_comparison}~Average drift of the two models compared to a model without anchoring (ten trials; error bars show the standard deviation across trials). \subrefb{subfig:darkness_fire_rate}~Difference in conjunctive-cell firing rate with and without visual input, for both models.}
+    \label{figure}
+\end{figure}
 
 \bibliography{literature.bib}
 \end{document}
+
+    % \begin{subfigure}{0.32\textwidth}
+    %     \includegraphics[width=1.0\textwidth]{figures/inverted_session/yaw_cells_activity_map.pdf}
+    %     \caption{}
+    %     \label{subfig:inversion}
+    % \end{subfigure}
