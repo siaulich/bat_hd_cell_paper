@@ -31,20 +31,21 @@ Ring attractors for three-dimensional navigation in bats}}
 \maketitle
 \vspace*{-2cm}
 
-\textbf{Summary:} Head direction (HD) cells in rats are well described by one-dimensional continuous attractor networks~\cite{Taube1990,Zhang1996}, in which a localized activity bump encodes the animal's heading. This framework is insufficient for animals that navigate freely in three dimensions, such as bats. HD cells recorded in bats are organized in toroidal coordinates~\cite{Finkelstein2015}: some are tuned to a single angle (yaw or pitch), others to conjunctions of angles. A unified computational account of these observations is still lacking.
+\textbf{Summary:} Head direction (HD) cells in rats are well described by one-dimensional attractor networks~\cite{Taube1990,Zhang1996}, in which a localized activity bump encodes the animal's heading. This framework is insufficient for animals that navigate freely in three dimensions, such as bats. HD cells recorded in bats are organized in toroidal coordinates~\cite{Finkelstein2015}: some are tuned to a single angle (yaw or pitch), others to conjunctions of angles. A unified computational account of these observations is still lacking.
 
-Here, we present minimal attractor-network models of the bat HD system that reproduce these firing patterns and cell types. The models combine two ring attractors, each integrating a different component of the vestibular input. Conjunctive HD cells functionally couple the resulting one-dimensional vestibular representations to a two-dimensional visual representation, which allows sparse visual information to correct the noise-induced drift of the attractor state. 
+Here, we present minimal attractor-network models of the bat HD system that reproduce these firing patterns and cell types. The models combine two ring attractors, each integrating a different component of the vestibular input. Conjunctive HD cells functionally couple the resulting one-dimensional vestibular representations to a two-dimensional visual representation, which allows sparse visual information to correct the noise-induced drift of the attractor state.
 
-To derive experimentally testable predictions, we compare two circuit architectures for coupling the HD system to visual input, either by associating visual landmark information with a conjunctive coding layer, or directly with the ring neurons. We characterize their distinct dynamical properties, and in both, Hebbian plasticity learns visual–HD connectivity, providing a possible mechanism for associating visual features with head direction.
+To derive experimentally testable predictions, we compare two architectures for coupling the HD system to visual input: landmark information is associated either with a conjunctive layer or directly with the ring neurons. We characterize their distinct dynamics; in both, Hebbian plasticity learns the visual--HD connectivity, offering a possible mechanism for associating visual features with head direction.
 
-Our framework is a starting point for more extensive modelling of the bat HD system. Three-dimensional navigation introduces additional degrees of freedom and computational questions that cannot be addressed by simply extending existing one-dimensional models. The problem is not specific to bats: recent recordings in rats moving over a hemispherical surface suggest that rodent HD cells also update their reference frame during three-dimensional movement~\cite{Williams2026}, and how this relates to the tuning reported in bats~\cite{Finkelstein2015} remains an open question. By capturing key experimental features in a minimal model, our work provides a basis for addressing such questions and motivates further modelling and experiments on the mechanisms of three-dimensional head-direction coding and its interaction with the visual system.
+Our framework is a starting point for more extensive modelling of the bat HD system. Three-dimensional navigation introduces additional degrees of freedom that cannot be captured by simply extending one-dimensional models. The problem is not specific to bats: recent recordings suggest that rodent HD cells also update their reference frame during three-dimensional movement~\cite{Williams2026}, but its relation to the tuning reported in bats~\cite{Finkelstein2015} remains an open question. By capturing key experimental features in a minimal model, our work provides a basis for addressing such questions and motivates further modelling and experiments on three-dimensional HD coding and its interaction with the visual system.
+
 
 \vspace*{-0.2cm}
 \hrulefill
 
 \textbf{Additional Details:} Our model uses rate-based neurons, with recurrent connectivity within each ring attractor as described in~\cite{Zhang1996}. Vestibular angular-velocity signals with respect to the yaw and pitch axes modulate the gain of the corresponding ring, thus integrating head movements in 3D. Additive Gaussian noise, implemented as a Wiener process, emulates neural variability. 
 
-We explore two configurations for the connectivity between the ring attractors. Sparse visual feedback is either projected from 3D landmark cells to a conjunctive cell layer that represents the full toroidal space, or projected directly to the yaw/pitch rings (\Cref{subfig:conj_feeback,subfig:direct_feedback}). Both employ dynamic weights based on normalized Hebbian learning~\cite{Miller1994} to learn the association between landmark cells and the HD system. Landmark cells have Gaussian tuning curves and become active when a landmark enters the bat’s visual field. In both models, conjunctive cells sum feedforward input from both rings and are thresholded by a negative bias. The models differ in the role of the conjunctive population: in the first model, the conjunctive cells mediate feedback but can also be thought of as representing a specific conjunction of pose and current visual input. In the direct feedback model, conjunctive cells could be sparser (need not cover all visual feedback instances) and thought of as encoding, e.g., poses of interest (e.g., for association with place fields.
+We explore two network configurations for conveying sensory feedback to the ring attractors. Sparse visual feedback is either projected from 3D landmark cells to a conjunctive cell layer that represents the full toroidal space, or projected directly to the yaw/pitch rings (\Cref{subfig:conj_feeback,subfig:direct_feedback}). Both employ dynamic weights based on normalized Hebbian learning~\cite{Miller1994} to learn the association between landmark cells and the HD system. Landmark cells have Gaussian tuning curves and become active when a landmark enters the bat’s visual field. In both models, conjunctive cells sum feedforward input from both rings and are thresholded by a negative bias. The models differ in the role of the conjunctive population: in the first model, the conjunctive cells mediate feedback but can also be thought of as representing a specific conjunction of pose and current visual input. In the direct feedback model, conjunctive cells could be sparser (need not cover all visual feedback instances) and thought of as encoding, e.g., poses of interest (e.g., for association with place fields downstream).
 
 Both models replicate the main HD cell types observed in flying bats~\cite{Finkelstein2015}. The trial-averaged firing rates of one representative cell per tuning pattern are shown in \Cref{subfig:cell_types}. Notably, yaw-tuned cells shift their azimuth tuning by \ang{180} upon inversion (\Cref{subfig:inversion}), which was a key feature of the toroidal coordinate encoding observed in~\cite{Finkelstein2015}. \Cref{subfig:drift_comparison} shows the average error over repeated trials for both mechanisms. While both provide stable anchoring, their firing rates differ markedly when visual feedback is absent (i.e. in the dark \Cref{subfig:darkness_fire_rate}), thus suggesting experiments to disambiguate the models.
 
@@ -55,18 +56,22 @@ Finally, we tested a single toroidal attractor, as proposed in~\cite{McNaughton2
 
 \begin{figure}[!b]
     \centering
+    \hspace{0.01\textwidth}
     \begin{subfigure}{0.3\textwidth}
         \includegraphics[width=1.0\textwidth]{figures/bat_hd_conj_feedback.pdf}
-        \caption{Conjunctive-cell feedback}
+        \caption{}
         \label{subfig:conj_feeback}
     \end{subfigure}
+    \hspace{0.02\textwidth}
     \begin{subfigure}{0.3\textwidth}
         \includegraphics[width=1.0\textwidth]{figures/bat_hd_direct_feedback.pdf}
-        \caption{Direct feedback}
+        \caption{}
         \label{subfig:direct_feedback}
     \end{subfigure}
+    \hspace{0.01\textwidth}
     \begin{subfigure}{0.32\textwidth}
-        \includegraphics[width=1.0\textwidth]{figures/bat_trajectory.pdf}
+        \centering
+        \includegraphics[width=1.0\textwidth,clip,trim={60 70 60 70}]{figures/bat_trajectory.pdf}
         \caption{}
         \label{subfig:trajectory}
     \end{subfigure}
@@ -104,7 +109,7 @@ Finally, we tested a single toroidal attractor, as proposed in~\cite{McNaughton2
     \subrefb{subfig:drift_comparison}~Average drift of the two models compared to a model without anchoring (ten trials; error bars show the standard deviation across trials). \subrefb{subfig:darkness_fire_rate}~Difference in conjunctive-cell firing rate with and without visual input, for both models.}
     \label{figure}
 \end{figure}
-
+\newpage
 \bibliography{literature.bib}
 \end{document}
 
